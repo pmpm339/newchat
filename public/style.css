@@ -38,13 +38,25 @@ button
     padding:1vw 3vw;
     display: inline-block;
 }
+#chats dt.self
+{
+  float:right;
+  background-color:#fcc;
+}
 #chats dd
 {
+    clear:both;
     margin-left: 8vw;
     position: relative;
     background-color:#ccc;
     border-radius:3vw;
     padding:1vw 3vw;
+}
+#chats dd.self
+{
+    margin-right: 8vw;
+    margin-left: 0;
+    background-color:#ccf;
 }
 #chats dd::before
 {
@@ -56,10 +68,19 @@ button
     margin-top: -7vw;
     border: 3vw solid transparent;
     border-right: 8vw solid #ccc;
-    transform: rotate(40deg);
+     transform: rotate(40deg);
+    z-index: -1;
+    width:0;
+}
+#chats dd.self::before
+{
+    right:-6vw;
+    left:inherit;
+    border-right: 3vw solid transparent;
+    border-left: 8vw solid #ccf;
+    transform: rotate(-40deg);
     z-index: -1;
 }
-
 #form
 {
     display:none;

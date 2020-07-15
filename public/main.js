@@ -25,6 +25,12 @@ socketio.on('message',function(msg){
 
   const dt = document.createElement("dt");
   const dd = document.createElement("dd");
+
+  if(obj.name==username){
+    dt.classList.add('self');
+    dd.classList.add('self');
+  }
+
   dt.append(obj.name);
   chats.append(dt);
   dd.append(obj.msg);
